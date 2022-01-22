@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block title %}Contact:-{% endblock %}
+{% block body %}
+<div class="container my-4">
+    <h3>Contact Us</h3>
+    <h6 class="my-4">Feel free to contact regrading any queries</h6>
+    <form action="/contact" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="text" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your E-mail">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone No</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your Mobile No">
+        </div>
+        <div class="form-group">
+            <label for="textarea" class="form-label">How May We Help you</label>
+            <textarea type="textarea" class="form-control" id="textarea" name="desc" rows="3" placeholder="Enter your message"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+
+{% endblock body %}
